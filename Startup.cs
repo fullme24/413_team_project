@@ -31,6 +31,10 @@ namespace _413_team_project
             {
                 options.UseSqlite(Configuration["ConnectionStrings:AppointmentsConnection"]);
             });
+            services.AddDbContext<TimeSlotContext>(options =>
+            {
+                options.UseSqlite(Configuration["ConnectionStrings:TimeSlotsConnection"]);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +61,8 @@ namespace _413_team_project
             {
                 endpoints.MapDefaultControllerRoute();
             });
+
+            SeedData.EnsurePopulated(app);
         }
     }
 }

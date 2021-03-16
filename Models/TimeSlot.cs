@@ -8,10 +8,13 @@ namespace _413_team_project.Models
 {
     public class TimeSlot
     {
+        [Key]
+        public int TimeSlotId { get; set; }
         [Required]
         public DateTime Slot { get; set; }
         [Required]
-        public bool Scheduled { get; set; }
+        public bool Scheduled { get; set; } = false;
+
 
     }
 }

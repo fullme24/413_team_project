@@ -19,8 +19,8 @@ namespace _413_team_project.Models
         public string Email { get; set; }
 
         public string PhoneNumber { get; set; }
-        [Range(8,20)]
         [Required]
+        [Key]
         public TimeSlot Slot { get; set; }
     }
 }
