@@ -1,6 +1,8 @@
+using _413_team_project.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +26,15 @@ namespace _413_team_project
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<AppointmentContext>(options =>
+            {
+                options.UseSqlite(Configuration["ConnectionStrings:AppointmentsConnection"]);
+            });
+            services.AddDbContext<TimeSlotContext>(options =>
+            {
+                options.UseSqlite(Configuration["ConnectionStrings:TimeSlotsConnection"]);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,10 +59,10 @@ namespace _413_team_project
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapDefaultControllerRoute();
             });
+
+            SeedData.EnsurePopulated(app);
         }
     }
 }
