@@ -59,7 +59,24 @@ namespace _413_team_project
 
             app.UseEndpoints(endpoints =>
             {
+                //Set up new endpoints to make user interaction better
+                endpoints.MapControllerRoute(
+                    "SignUp",
+                    "Signup",
+                    new { Controller = "Home", action = "SignUp"}
+                    );
+
+
+                endpoints.MapControllerRoute(
+                    "Appointment",
+                    "Appointment",
+                    new { Controller = "Home", action = "AppointmentList" }
+                    );
+
+
+
                 endpoints.MapDefaultControllerRoute();
+
             });
 
             SeedData.EnsurePopulated(app);

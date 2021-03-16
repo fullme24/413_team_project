@@ -1,0 +1,48 @@
+﻿@model IEnumerable<_413_team_project.Models.Appointment>
+
+@{
+    ViewData["Title"] = "AppointmentList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>AppointmentList</h1>
+
+<p>
+    <a asp-action="SignUp">Schedule New Appointment</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GroupName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GroupSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GroupName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GroupSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
