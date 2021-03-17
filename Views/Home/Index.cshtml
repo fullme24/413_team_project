@@ -1,8 +1,30 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-1">Temple Tours</h1>
+    <br />
+    <img style="width:400px; height:400px" class="card-img" src="~/temple.jpg" />
+    <br />
+    <h2>Welcome to the Layton Temple Tours page! </h2>
+    <br /><br />
+    <p class="text-xl-center">Here you can schedule a temple tour any day from 8 A.M. to 8 P.M. (MST). Click below to see our availability.</p>
+    <br />
+    <div>
+        <button class="btn-light btn-outline-dark btn-group-lg">
+            <a asp-action="SignUp">Schedule an Appointment</a>
+        </button>
+    </div>
+    <br />
+
+</div>
+<div>
+    <ul>
+        General Tour Instructions:
+
+        <li>Masks are required.</li>
+        <li>Park on Rosewood (west side of the temple) and meet at the Visitors Center trailer.</li>
+        <li>Dress casual, except on Sunday</li>
+    </ul>
 </div>
