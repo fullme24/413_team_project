@@ -51,17 +51,13 @@ namespace _413_team_project.Controllers
         }
 
         [HttpPost]
-        public IActionResult AppointmentForm(Appointment appointment, int timeslotid)
+        public IActionResult AppointmentForm(Appointment appointment)
         {
-            appointment.Slot = _TimeSlotContext.TimeSlots
-                 .Where(t => t.TimeSlotId == timeslotid)
-                 .FirstOrDefault();
-            
             _AppointmentContext.Appointments.Add(appointment);
             _AppointmentContext.SaveChanges();
 
             _TimeSlotContext.TimeSlots
-                .Where(t => t.TimeSlotId == appointment.Slot.TimeSlotId)
+                .Where(t => t.Slot == appointment.Slot)
                 .FirstOrDefault().Scheduled = true;
 
             _TimeSlotContext.SaveChanges();

@@ -9,8 +9,8 @@ using _413_team_project.Models;
 namespace _413_team_project.Migrations
 {
     [DbContext(typeof(AppointmentContext))]
-    [Migration("20210316014132_Initial")]
-    partial class Initial
+    [Migration("20210317171924_inicial")]
+    partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,40 +38,12 @@ namespace _413_team_project.Migrations
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("SlotTimeSlotId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("AppointmentId");
-
-                    b.HasIndex("SlotTimeSlotId");
-
-                    b.ToTable("Appointments");
-                });
-
-            modelBuilder.Entity("_413_team_project.Models.TimeSlot", b =>
-                {
-                    b.Property<int>("TimeSlotId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("Scheduled")
-                        .HasColumnType("INTEGER");
-
                     b.Property<DateTime>("Slot")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("TimeSlotId");
+                    b.HasKey("AppointmentId");
 
-                    b.ToTable("TimeSlot");
-                });
-
-            modelBuilder.Entity("_413_team_project.Models.Appointment", b =>
-                {
-                    b.HasOne("_413_team_project.Models.TimeSlot", "Slot")
-                        .WithMany()
-                        .HasForeignKey("SlotTimeSlotId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.ToTable("Appointments");
                 });
 #pragma warning restore 612, 618
         }

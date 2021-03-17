@@ -20,6 +20,7 @@ namespace _413_team_project.Models
 
         public string PhoneNumber { get; set; }
         [Required]
-        public TimeSlot Slot { get; set; }
+        //[DisplayFormat()]
+        public DateTime Slot { get; set; }
     }
 }
