@@ -1,9 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+    ViewBag.title = "Temples Appointments";
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - _413_team_project</title>
+    <title>@ViewBag.title</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -11,11 +15,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light background border-bottom box-shadow mb-3 rounded">
             <div class="container">
-                <a class="navbar-brand text-dark border font-weight-bold" asp-area="" asp-controller="Home" asp-action="Index">_413_team_project</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <p class="navbar-brand text-dark border font-weight-bold" asp-area="" asp-controller="Home" asp-action="Index">@ViewBag.title</p>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
@@ -40,7 +40,7 @@
 
     <footer class="border-top footer text-muted background">
         <div class="container text-dark">
-            &copy; 2021 - _413_team_project - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2021 - _413_team_project <a href="https://www.linkedin.com/in/true-fullmer/">About Us</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

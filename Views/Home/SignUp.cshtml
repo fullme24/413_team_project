@@ -4,39 +4,39 @@
     ViewData["Title"] = "SignUp";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="border-dark border">
+    <div class="rounded light-pink">
+        <h1>SignUp</h1>
 
-<h1>SignUp</h1>
-
-<p>
-    <a asp-action="Create">Create New</a> <!--Where is this link suppose to go??-->
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Slot)
-            </th>
-            <th>
-                Actions
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Slot)
-                </td>
-                <td>
-                    <form asp-action="SignUp" method="post">
-                        <input name="TimeSlotId" hidden value="@item.TimeSlotId" />
-                        <button type="submit" class="btn btn-primary">
-                            Select Time
-                        </button>
-                    </form>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Slot)
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Slot)
+                        </td>
+                        <td>
+                            <form asp-action="SignUp" method="post">
+                                <input name="TimeSlotId" hidden value="@item.TimeSlotId" />
+                                <button type="submit" class="btn btn-primary">
+                                    Select Time
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div> 

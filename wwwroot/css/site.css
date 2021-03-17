@@ -84,3 +84,17 @@ a.hover:hover {
     border-style: solid;
     padding: 10px;
 }
+
+/* 
+    SOme extra custom css
+*/
+
+.temple {
+    background-image: url('../img/Oakland_Mormon_Temple.jpg');
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+
+.light-pink {
+    background-color: #d3d3d3;
+}
