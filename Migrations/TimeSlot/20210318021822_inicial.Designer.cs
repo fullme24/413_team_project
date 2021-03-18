@@ -9,8 +9,8 @@ using _413_team_project.Models;
 namespace _413_team_project.Migrations.TimeSlot
 {
     [DbContext(typeof(TimeSlotContext))]
-    [Migration("20210316014145_Initial")]
-    partial class Initial
+    [Migration("20210318021822_inicial")]
+    partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
