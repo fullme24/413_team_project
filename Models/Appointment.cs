@@ -8,6 +8,8 @@ namespace _413_team_project.Models
 {
     public class Appointment
     {
+
+        //Properties for managing the information needed to schedule and store an appointment into the database
         [Key]
         public int AppointmentId { get; set; }
         [Required]
@@ -17,10 +19,8 @@ namespace _413_team_project.Models
         [Required]
         [EmailAddress]
         public string Email { get; set; }
-
         public string PhoneNumber { get; set; }
         [Required]
-        //[DisplayFormat()]
         public DateTime Slot { get; set; }
     }
 }
